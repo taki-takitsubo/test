@@ -6,7 +6,7 @@
      let rect=fadeIn.getBoundingClientRect().top;
      let scroll=window.pageYOffset;
      let offset=rect+scroll;
-     if(scroll>offset-windowHeight+150){
+     if(scroll>offset-windowHeight+160){
        fadeIn.classList.add('fadein-active');
      };
    });

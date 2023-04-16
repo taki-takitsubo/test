@@ -67,6 +67,14 @@ p:last-of-type{
 .btn:hover::after{
   transform:translateX(.5rem) rotate(30deg);
 }
+.fadein{
+  opacity:0;
+  transition:.5s;
+  transition-property:opacity;
+}
+.fadein-active{
+  opacity:1;
+}
 section{
   position:relative;
   z-index:1;
@@ -186,20 +194,76 @@ section{
 .blog .btn::before,.blog .btn::after{
   background:var(--taki-green);
 }
-.twitter{
-  background:url(../images/twitter_bg.jpg) no-repeat left center/cover;
-  display:grid;
-  place-content:center;
+.note{
+  background:linear-gradient(rgba(255,255,255,.7),rgba(255,255,255,.7)),url(../images/note_bg.jpg) repeat center top/24px; 
+  padding:4rem 0;
 }
-.twitter .content{
+.note .content{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:.75rem;
+}
+.note-title{
+  font-size:1.25rem;
+  font-weight:500;
+  margin:0 0 1.25rem;
+}
+.note .btn{
+  color:var(--taki-green);
+  border-color:var(--taki-green);
+}
+.note .btn::before,.note .btn::after{
+  background:var(--taki-green);
+}
+.instagram{
+  background:linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.9)),url(../images/instagram_bg.jpg) no-repeat left center/cover;
+  padding:4rem 0;
+}
+.instagram .content{
   display:grid;
   grid-template-columns:1fr;
   gap:2rem;
 }
-.twitter-ttl{
+.instagram-content-top-feed{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:.25rem;
+}
+.instagram-content-top-feed a{
+  display:block;
+  position:relative;
+}
+.instagram-content-top-feed a::after{
+  content:"";
+  display:block;
+  width:100%;
+  height:100%;
+  background:rgba(62,117,0,0);
+  position:absolute;
+  top:0;
+  left:0;
+  transition:.5s;
+}
+.instagram-content-top-feed a:hover::after{
+  background:rgba(62,117,0,.6);
+}
+.instagram-title{
   font-size:1.25rem;
   font-weight:500;
   margin:0 0 1.25rem;
+}
+.instagram .btn{
+  color:var(--taki-green);
+  border-color:var(--taki-green);
+}
+.instagram .btn::before,.instagram .btn::after{
+  background:var(--taki-green);
+}
+footer{
+  text-align:center;
+  padding:2rem 1rem;
+  background:#f8f8f8;
+  font-size:.75rem;
 }
 
 @media screen and (min-width:768px){
@@ -243,10 +307,28 @@ section{
   .blog-content-bottom{
     order:1;
   }
-  .twitter .content{
-    width:100%;
+  .note{
+    display:grid;
+    align-items:center;
+  }
+  .note .content{
     grid-template-columns:1fr 1fr;
     gap:3rem;
     align-items:center;
+  }
+  .instagram{
+    display:grid;
+    align-items:center;
+  }
+  .instagram .content{
+    grid-template-columns:1fr 1fr;
+    gap:3rem;
+    align-items:center;
+  }
+  .instagram-content-top{
+    order:2;
+  }
+  .instagram-content-bottom{
+    order:1;
   }
 }
