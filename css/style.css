@@ -108,7 +108,7 @@ section{
 .news .content{
   display:grid;
   grid-template-columns:1fr;
-  gap:2rem 4rem;
+  gap:0 4rem;
 }
 .news-content-top,.news-ttl{
   font-size:1.25rem;
@@ -152,9 +152,8 @@ section{
 }
 .profile{
   background: linear-gradient(rgba(62,117,0,.3),rgba(62,117,0,.3)),url(../images/profile_bg.jpg) no-repeat center center/cover;
-  display:grid;
-  place-content:center;
   color:#fff;
+  padding:4rem 0;
 }
 .profile .content{
   display:grid;
@@ -166,7 +165,27 @@ section{
   font-weight:500;
   margin:0 0 1.25rem;
 }
-
+.blog{
+  background:#fff;
+  padding:4rem 0;
+}
+.blog .content{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2rem;
+}
+.blog-title{
+  font-size:1.25rem;
+  font-weight:500;
+  margin:0 0 1.25rem;
+}
+.blog .btn{
+  color:var(--taki-green);
+  border-color:var(--taki-green);
+}
+.blog .btn::before,.blog .btn::after{
+  background:var(--taki-green);
+}
 .twitter{
   background:url(../images/twitter_bg.jpg) no-repeat left center/cover;
   display:grid;
@@ -200,11 +219,29 @@ section{
     grid-template-columns:5rem auto;
     align-items:center;
   }
+  .profile{
+    display:grid;
+    align-items:center;
+  }
   .profile .content{
-    width:100%;
     grid-template-columns:1fr 1fr;
     gap:3rem;
     align-items:center;
+  }
+  .blog{
+    display:grid;
+    align-items:center;
+  }
+  .blog .content{
+    grid-template-columns:1fr 1fr;
+    gap:3rem;
+    align-items:center;
+  }
+  .blog-content-top{
+    order:2;
+  }
+  .blog-content-bottom{
+    order:1;
   }
   .twitter .content{
     width:100%;
