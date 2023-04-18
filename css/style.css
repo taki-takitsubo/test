@@ -69,15 +69,18 @@ p:last-of-type{
 }
 .fadein{
   opacity:0;
-  transition:.5s;
-  transition-property:opacity;
+  transition:1s;
+  transition-property:opacity,translate;
+  translate:0 1rem;
 }
 .fadein-active{
   opacity:1;
+  translate:0 0;
 }
 section{
   position:relative;
   z-index:1;
+
 }
 .mv{
   width:100%;
@@ -92,7 +95,7 @@ section{
   width:100%;
   height:100svh;
   background: linear-gradient(rgba(62,117,0,.3),rgba(62,117,0,.3)),url(../images/mv.jpg) no-repeat center top/cover;
-  position:absolute;
+  position:fixed;
   top:0;
   left:0;
   z-index:-1;
@@ -267,11 +270,19 @@ footer{
 }
 
 @media screen and (min-width:768px){
+  /* common */
+  .fadein{
+    translate:0 0;
+  }
   section{
     height:100vh;
+    max-height:724px;
   }
   section.news{
+    display:grid;
     height:auto;
+    min-height:433px;
+    align-items:center;
   }
   .news .content{
     width:100%;
